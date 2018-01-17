@@ -13,7 +13,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="#FFE8F8FF">
-        <TextBlock Margin="5,5,5,5">
+        <TextBlock Margin="5,5,5,2">
             <Run FontSize="18" FontWeight="DemiBold" Foreground="#FF323232">Osbiz Trace Converter </Run> Version 1.0<LineBreak />
             www.genwre.de
         </TextBlock>
