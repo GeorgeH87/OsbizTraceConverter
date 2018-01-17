@@ -1,0 +1,52 @@
+﻿<Window x:Class="OsbizTraceConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OsbizTraceConverter"
+        mc:Ignorable="d"
+        Title="Osbiz Trace Converter" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#FFE8F8FF">
+        <TextBlock Margin="5,5,5,5">
+            <Run FontSize="18" FontWeight="DemiBold" Foreground="#FF323232">Osbiz Trace Converter </Run> Version 1.0<LineBreak />
+            www.genwre.de
+        </TextBlock>
+        </Grid>
+        <Grid Grid.Row="1" Background="#FFF4F4F4">
+        <StackPanel Width="500"  Height="200" HorizontalAlignment="Center">
+            <Label Content="Folder Input" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100px"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="TextBox_FolderInput" Grid.Column="0"/>
+                <Button x:Name="Button_FolderInput" Grid.Column="1" Content="Choose Folder" Click="Button_FolderInput_Click"/>
+            </Grid>
+            <Label Content="File Filter" />
+            <TextBox x:Name="TextBox_FolderFilter" Text="*.log"/>
+            <Label Content="Output File" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100px"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="TextBox_Outputfile" />
+                <Button x:Name="Button_Outputfile" Grid.Column="1" Content="Set File..." Click="Button_Outputfile_Click"/>
+            </Grid>
+            <Button x:Name="Convert" Content="Convert" Margin="20,20,20,20" Click="Convert_Click"/>
+        </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="2" Margin="20,20,20,20">
+            <Label x:Name="Label_Status" />
+            <ProgressBar x:Name="ProgressBar_File" Height="20"/>
+            <TextBlock x:Name="TextBlock_Messages" />
+        </StackPanel>
+    </Grid>
+</Window>
