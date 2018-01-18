@@ -45,6 +45,7 @@ namespace OsbizTraceConverter
             TextBlock_Messages.Text += "\nSIP MESSAGES: " + sc.SipMessages;
             TextBlock_Messages.Text += "\n\n";
             ProgressBar_File.Value = 0;
+            setControls(true);
         }
 
         private void Bw_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -85,11 +86,47 @@ namespace OsbizTraceConverter
 
         private void Convert_Click(object sender, RoutedEventArgs e)
         {
+            TextBlock_Messages.Text = "";
+
+            sc = new SIPConverter(bw);
             sc.InputFolder = TextBox_FolderInput.Text;
             sc.OutputFilename = TextBox_Outputfile.Text;
             sc.FileFilter = TextBox_FolderFilter.Text;
+            setControls(false);
             bw.RunWorkerAsync();
         }
-       
+
+        private void setControls(bool val)
+        {
+            Button_FolderInput.IsEnabled = val;
+            Button_Outputfile.IsEnabled = val;
+            TextBox_FolderFilter.IsEnabled = val;
+            TextBox_FolderInput.IsEnabled = val;
+            TextBox_Outputfile.IsEnabled = val;
+        }
+
+        private void Button_OpenPCAP_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(TextBox_Outputfile.Text);
+            } catch (Exception ex)
+            {
+                showMessage("ERROR", ex.ToString());
+            }
+            
+        }
+
+        private void showMessage(string title, string message)
+        {
+            Label_Message.Content = title;
+            TextBlock_Message.Text = message;
+            Message.Visibility = Visibility.Visible;
+        }
+
+        private void Button_Message_Close_Click(object sender, RoutedEventArgs e)
+        {
+            Message.Visibility = Visibility.Hidden;
+        }
     }
 }

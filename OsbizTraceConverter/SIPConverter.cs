@@ -18,7 +18,6 @@ namespace OsbizTraceConverter
         public string activeFile { get; set; }
         public string linesRead { get; set; }
 
-
         private byte beforeProgress = 0;
         private byte currentProgress = 0;
 

@@ -5,48 +5,78 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OsbizTraceConverter"
         mc:Ignorable="d"
-        Title="Osbiz Trace Converter" Height="350" Width="525">
+        Title="Osbiz Trace Converter" Height="523.833" Width="719.833" Icon="puzzle-icon.png">
     <Grid>
+        <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="200"/>
+            <RowDefinition Height="135" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="#FFE8F8FF">
-        <TextBlock Margin="5,5,5,2">
+        <Grid Grid.Row="0" Margin="10,10,10,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Image Width="50" Height="50" Source="puzzle-icon.png" Stretch="Fill" Grid.Column="0" Margin="10,0,10,0"/>
+            <TextBlock Margin="5,5,5,2" Grid.Column="1">
             <Run FontSize="18" FontWeight="DemiBold" Foreground="#FF323232">Osbiz Trace Converter </Run> Version 1.0<LineBreak />
             www.genwre.de
-        </TextBlock>
+            </TextBlock>
         </Grid>
         <Grid Grid.Row="1" Background="#FFF4F4F4">
-        <StackPanel Width="500"  Height="200" HorizontalAlignment="Center">
-            <Label Content="Folder Input" />
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="100px"/>
-                </Grid.ColumnDefinitions>
-                <TextBox x:Name="TextBox_FolderInput" Grid.Column="0"/>
-                <Button x:Name="Button_FolderInput" Grid.Column="1" Content="Choose Folder" Click="Button_FolderInput_Click"/>
-            </Grid>
-            <Label Content="File Filter" />
-            <TextBox x:Name="TextBox_FolderFilter" Text="*.log"/>
-            <Label Content="Output File" />
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="100px"/>
-                </Grid.ColumnDefinitions>
-                <TextBox x:Name="TextBox_Outputfile" />
-                <Button x:Name="Button_Outputfile" Grid.Column="1" Content="Set File..." Click="Button_Outputfile_Click"/>
-            </Grid>
-            <Button x:Name="Convert" Content="Convert" Margin="20,20,20,20" Click="Convert_Click"/>
-        </StackPanel>
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="10" Direction="0" Opacity="0.3"/>
+            </Grid.Effect>
+            <StackPanel Width="500"  Height="200" HorizontalAlignment="Center" Background="#FFF4F4F4" >
+                <Label Content="Folder Input" Opacity="0.7"  />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="100px"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="TextBox_FolderInput" Grid.Column="0"/>
+                    <Button x:Name="Button_FolderInput" Grid.Column="1" Content="Choose Folder" Click="Button_FolderInput_Click"/>
+                </Grid>
+                <Label Content="File Filter" Opacity="0.7" />
+                <TextBox x:Name="TextBox_FolderFilter" Text="*.log"/>
+                <Label Content="Output File" Opacity="0.7" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="100px"/>
+                        <ColumnDefinition Width="100px"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="TextBox_Outputfile" />
+                    <Button x:Name="Button_Outputfile" Grid.Column="1" Content="Set File..." Click="Button_Outputfile_Click"/>
+                    <Button x:Name="Button_OpenPCAP" Grid.Column="2" Content="Open PCAP" Click="Button_OpenPCAP_Click" />
+                </Grid>
+                <Button x:Name="Convert" Content="Convert" Margin="20,20,20,20" Click="Convert_Click"/>
+            </StackPanel>
         </Grid>
         <StackPanel Grid.Row="2" Margin="20,20,20,20">
+            <Label Content="Status:" Opacity="0.7" />
             <Label x:Name="Label_Status" />
+            <Label Content="Progress:" Opacity="0.7"  />
             <ProgressBar x:Name="ProgressBar_File" Height="20"/>
-            <TextBlock x:Name="TextBlock_Messages" />
+
         </StackPanel>
+        <ScrollViewer Height="Auto" Grid.Row="3">
+            <TextBlock x:Name="TextBlock_Messages"/>
+        </ScrollViewer>
+        </Grid>
+        <Grid x:Name="Message" Margin="0,0,0,0" Background="#CCFFFFFF" Visibility="Hidden">
+            <Grid Height="300" Width="300" Background="Beige">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="Label_Message" Content="Error" Background="{x:Null}" FontSize="15px" FontWeight="Bold" Grid.Row="0"/>
+                <TextBlock x:Name="TextBlock_Message" Margin="10,10,10,10" Grid.Row="1">asdasdasda</TextBlock>
+                <Button x:Name="Button_Message_Close" Content="Close" Grid.Row="2" Click="Button_Message_Close_Click"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
