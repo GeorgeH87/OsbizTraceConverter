@@ -99,7 +99,7 @@ namespace OsbizTraceConverter
                     {
                         if (line.StartsWith("(SIP_SA"))
                         {
-                            string localRegex = "\\(SIP_SA \\[ldh:([\\d\\.]+)\\] [0-9x]+ \"(\\d+)\\/(\\d+)\\/(\\d+) (\\d+):(\\d+):(\\d+).(\\d+)\" .*";
+                            string localRegex = "\\(SIP_SA \\[ldh:([\\d\\.]+)\\] [0-9a-fA-Fx]+ \"(\\d+)\\/(\\d+)\\/(\\d+) (\\d+):(\\d+):(\\d+).(\\d+)\" .*";
 
                             string fromRegex = "from (?:localAddr=)?([\\d\\.]+):(\\d+)";
                             string toRegex = "to (?:localAddr=)?([\\d\\.]+):(\\d+)";
