@@ -119,8 +119,8 @@ namespace OsbizTraceConverter
             bytes.Add(timeToLive);
             bytes.Add(protocol);
             bytes.AddRange(BitConverter.GetBytes(checksum).Reverse());
-            bytes.AddRange(sourceIP.GetAddressBytes().Reverse());
-            bytes.AddRange(destinationIP.GetAddressBytes().Reverse());
+            bytes.AddRange(sourceIP.GetAddressBytes());
+            bytes.AddRange(destinationIP.GetAddressBytes());
             bytes.AddRange(data);
             return bytes.ToArray();
         }
@@ -253,7 +253,7 @@ namespace OsbizTraceConverter
             int minute = int.Parse(l1[0].Groups[6].Value);
             int second = int.Parse(l1[0].Groups[7].Value);
             uint microsecond = uint.Parse(l1[0].Groups[8].Value);
-
+            
             IPAddress fromAddress = IPAddress.Parse(fromMatch[0].Groups[1].Value);
             UInt16 fromPort = UInt16.Parse(fromMatch[0].Groups[2].Value);
 
@@ -282,7 +282,7 @@ namespace OsbizTraceConverter
                 counterIP.Add(fromAddress, ipCounter);
             }
 
-            DateTime dt = new DateTime(year, month, day, hour, minute, second);
+            DateTime dt = new DateTime(year, month, day, hour, minute, second).ToUniversalTime();
             DateTime ft = new DateTime(1970, 1, 1);
 
             uint seconds = (uint)dt.Subtract(ft).TotalSeconds;
