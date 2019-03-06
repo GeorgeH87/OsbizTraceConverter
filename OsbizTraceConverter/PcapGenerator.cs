@@ -126,6 +126,21 @@ namespace OsbizTraceConverter
         }
     }
 
+    class TCPHeader
+    {
+        UInt16 sourcePort;
+        UInt16 destinationPort;
+        UInt32 sequenceNumber;
+        UInt32 acknowledgmentNumber;
+        byte headerLength;
+        UInt16 flags;
+        UInt16 windowSizeValue;
+        UInt16 checkSum;
+        UInt16 urgentPointer;
+
+
+    }
+
     class UDPHeader
     {
         UInt16 sourcePort;

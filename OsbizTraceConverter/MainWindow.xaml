@@ -22,8 +22,7 @@
             <Image Width="50" Height="50" Source="puzzle-icon.png" Stretch="Fill" Grid.Column="0" Margin="10,0,10,0"/>
             <TextBlock Margin="5,5,5,2" Grid.Column="1">
             <Run FontSize="18" FontWeight="DemiBold" Foreground="#FF323232">Osbiz Trace Converter </Run> Version 1.0.1<LineBreak />
-            www.genwre.de
-            </TextBlock>
+                </TextBlock>
         </Grid>
         <Grid Grid.Row="1" Background="#FFF4F4F4">
             <Grid.Effect>
