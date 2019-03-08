@@ -8,4 +8,4 @@ Download the latest executable here:
 ## Howto
 There is a german tutorial video how to use the OsbizTraceConvert:
 
-[https://www.youtube.com/watch?v=7mDt11M_R58](https://www.youtube.com/watch?v=7mDt11M_R58&t=275s)
+[https://www.youtube.com/watch?v=7mDt11M_R58](https://www.youtube.com/watch?v=7mDt11M_R58)
