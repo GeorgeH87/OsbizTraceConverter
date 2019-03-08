@@ -4,7 +4,7 @@ The OsbizTraceConvert is a .NET application for Windows. Please make sure you ha
 ## Download Executable
 Download the latest executable here:
 
-[OsbizTraceConverter.exe](https://github.com/GeorgeH87/OsbizTraceConverter/blob/master/OsbizTraceConverter/bin/Debug/OsbizTraceConverter.exe.config)
+[OsbizTraceConverter.exe](https://github.com/GeorgeH87/OsbizTraceConverter/blob/master/OsbizTraceConverter/bin/Debug/OsbizTraceConverter.exe)
 ## Howto
 There is a german tutorial video how to use the OsbizTraceConvert:
 
